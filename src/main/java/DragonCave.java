@@ -7,16 +7,14 @@ public class DragonCave {
     public static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("You are in a land of dragons, in front of you," + "\n\n"
-                + "you see two caves. " + "In one cave, the dragon is friendly" + "\n\n"
-                + "and will share the treasure with you. The other dragon" + "\n\n"
-                + "is greedy and hungry and will eat you on sight.");
 
-        System.out.println();
+        caveDetails();
+
         int returnGetCaveID = getUserInputforCave();
+
         System.out.println(returnGetCaveID);
         returnResult(returnGetCaveID);
-    }
+        }
 
     public static void returnResult(int getCaveID) {
 
@@ -42,12 +40,19 @@ public class DragonCave {
 
     public static int getUserInputforCave() {
         System.out.println("\033[0;1m" + "Which cave will you go into? (1 or 2) " + "\033[0m");
-        int caveId = input.nextInt();
-        return caveId;
-//        try {
-//            return caveId;
-//        } catch (Exception e) {
-//            return 10000;
-//        }
+        int caveId = 0;
+        try {
+            caveId = input.nextInt();
+            return caveId;
+        } catch (Exception e) {
+            return caveId;
+        }
+    }
+
+    public static void caveDetails(){
+        System.out.println("You are in a land of dragons, in front of you," + "\n\n"
+                + "you see two caves. " + "In one cave, the dragon is friendly" + "\n\n"
+                + "and will share the treasure with you. The other dragon" + "\n\n"
+                + "is greedy and hungry and will eat you on sight." + "\n");
     }
 }
